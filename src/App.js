@@ -19,7 +19,7 @@ import Cta from "./components/Cta";
 import Footer from "./components/Footer";
 
 const App = () => {
-  //initialize aos
+  // initialize aos
   Aos.init({
     duration: 1800,
     offset: 100,
