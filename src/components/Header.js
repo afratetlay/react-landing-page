@@ -9,7 +9,7 @@ import Nav from "../components/Nav";
 
 const Header = () => {
   // mobile nav state
-  const [MobileNav, setMobileNav] = useState(false);
+  const [mobileNav, setMobileNav] = useState(false);
   // header state
   const [isActive, setIsActive] = useState(false);
   // destructure header data
@@ -29,31 +29,41 @@ const Header = () => {
     >
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
-        <a href="#">
+        <a href="#" data-aos="fade-down" data-aos-delay="1000">
           <img src={logo} alt="" />
         </a>
         {/* Nav - initially hidden - shown on desktop mode */}
-        <div className="hidden lg:flex">
+        <div
+          className="hidden lg:flex"
+          data-aos="fade-down"
+          data-aos-delay="1200"
+        >
           <Nav />
         </div>
         {/* CTA button - initially hidden - show on desktop mode*/}
-        <button className="btn btn-sm btn-outline hidden lg:flex">
+        <button
+          className="btn btn-sm btn-outline hidden lg:flex"
+          data-aos="fade-down"
+          data-aos-delay="1400"
+        >
           {btnText}
         </button>
         {/* mobile nav trigger btn - hidden on desktop */}
-        <button className="lg:hidden" onClick={() => setMobileNav(!MobileNav)}>
-          {MobileNav ? (
+        <button className="lg:hidden" onClick={() => setMobileNav(!mobileNav)}>
+          {mobileNav ? (
             <HiOutlineX className="text-3xl text-accent" />
           ) : (
             <HiMenuAlt4 className="text-3xl text-accent" />
           )}
         </button>
         {/* mobile nav - hidden on desktop */}
-        {/* <div
-          className={`fixed top-0 bottom-0 w-[60vw] lg:hidden transition-all bg-pink-400`}
+        <div
+          className={`${
+            mobileNav ? "left-0" : "-left-full"
+          } fixed top-0 bottom-0 w-[60vw] lg:hidden transition-all`}
         >
           <MobileNav />
-        </div> */}
+        </div>
       </div>
     </header>
   );
