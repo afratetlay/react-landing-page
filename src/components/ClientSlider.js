@@ -10,7 +10,7 @@ const ClientSlider = ({ clients }) => {
       slidesPerView={1}
       spaceBetween={30}
       grabCursor={true}
-      Loop={true}
+      loop={true}
       breakpoints={{
         640: {
           slidesPerView: 1,
